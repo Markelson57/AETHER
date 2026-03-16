@@ -1,0 +1,37 @@
+# .ralphrc — AETHER + Ralph Configuration
+# ─────────────────────────────────────────
+# Project settings for the autonomous development loop
+
+PROJECT_NAME="aether-project"
+PROJECT_TYPE="auto"  # auto | typescript | python | rust | go
+
+# Claude Code CLI command
+CLAUDE_CODE_CMD="claude"
+# Uncomment to use npx instead:
+# CLAUDE_CODE_CMD="npx @anthropic-ai/claude-code"
+
+# ─── Loop Settings ────────────────────────────────────────────────────────────
+MAX_CALLS_PER_HOUR=100
+CLAUDE_TIMEOUT_MINUTES=15
+CLAUDE_OUTPUT_FORMAT="json"
+
+# ─── Tool Permissions ─────────────────────────────────────────────────────────
+# Only safe git subcommands are allowed by default (avoids destructive git commands)
+ALLOWED_TOOLS="Write,Read,Edit,Bash(git add *),Bash(git commit *),Bash(git diff *),Bash(git log *),Bash(git status),Bash(git push *),Bash(git pull *),Bash(git checkout *),Bash(git stash *),Bash(npm *),Bash(python *),Bash(pytest)"
+
+# ─── Session Management ───────────────────────────────────────────────────────
+SESSION_CONTINUITY=true
+SESSION_EXPIRY_HOURS=24
+
+# ─── Circuit Breaker ──────────────────────────────────────────────────────────
+# Opens when no progress after N loops (prevents infinite stagnation)
+CB_NO_PROGRESS_THRESHOLD=3
+# Opens when same error repeats N times
+CB_SAME_ERROR_THRESHOLD=5
+# Minutes before auto-recovery attempt (0 = immediate)
+CB_COOLDOWN_MINUTES=30
+# Auto-reset on startup (useful for unattended CI runs)
+CB_AUTO_RESET=false
+
+# ─── Output ───────────────────────────────────────────────────────────────────
+RALPH_VERBOSE=false
