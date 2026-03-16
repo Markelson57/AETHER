@@ -1,159 +1,159 @@
-<![CDATA[<div align="center">
+
+<div align="center">
 
 ```
-    ⬡  A E T H E R  ⬡
-    ─────────────────────
-    Asistente Técnico Avanzado
-    Motor IA Personalizado
+⬡  A E T H E R  ⬡
+─────────────────────────────
+Advanced Enhanced Technical Helper
+    with Extended Resources
 ```
 
-[![Version](https://img.shields.io/badge/version-3.0-8b5cf6?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyTDIgN2wxMCA1IDEwLTV6TTIgMTdsOCA0IDgtNE0yIDEybDggNCA4LTQiLz48L3N2Zz4=)](https://github.com/Markelson57/AETHER)
-[![Motor](https://img.shields.io/badge/motor-Claude%20%2B%20Groq%20%2B%20OpenRouter-6366f1?style=flat-square)](https://github.com/Markelson57/AETHER)
-[![MCPs](https://img.shields.io/badge/MCPs-5%20configurados-a855f7?style=flat-square)](https://github.com/Markelson57/AETHER)
-[![Discord Bot](https://img.shields.io/badge/discord%20bot-MARKELSOFT%20AI%20v3.0-5865F2?style=flat-square&logo=discord)](https://github.com/Markelson57/AETHER)
-[![Status](https://img.shields.io/badge/estado-operativo-22c55e?style=flat-square)](https://github.com/Markelson57/AETHER)
+[![Version](https://img.shields.io/badge/version-3.0-8b5cf6?style=flat-square)](https://github.com/Markelson57/AETHER)
+[![Motor](https://img.shields.io/badge/LLM-Claude%20%2B%20Groq%20%2B%20OpenRouter-6366f1?style=flat-square)](https://github.com/Markelson57/AETHER)
+[![MCPs](https://img.shields.io/badge/MCPs-5-a855f7?style=flat-square)](https://github.com/Markelson57/AETHER)
+[![Status](https://img.shields.io/badge/status-operational-22c55e?style=flat-square)](https://github.com/Markelson57/AETHER)
 
 </div>
 
 ---
 
-## ¿Qué es AETHER?
+## What is AETHER?
 
-**AETHER** (Advanced Enhanced Technical Helper with Extended Resources) es un asistente técnico avanzado con identidad propia, construido sobre Claude (Anthropic) y potenciado con un sistema de MCPs (Model Context Protocol) para operar con acceso real al sistema de archivos, memoria persistente, GitHub, bases de datos y automatización de navegador.
+**AETHER** is a personalized AI technical assistant with its own identity, built on top of Claude (Anthropic) and enhanced with MCP (Model Context Protocol) servers for real system access: filesystem, persistent memory, GitHub, databases, and browser automation.
 
-No es un chatbot genérico. Es un **copiloto técnico** especializado, con memoria entre sesiones, personalidad definida y capacidad de actuar en el entorno del sistema directamente.
-
----
-
-## Arquitectura
-
-```
-┌─────────────────────────────────────────────────┐
-│                   AETHER v3.0                   │
-│         Identidad · Memoria · Contexto          │
-├─────────────────────────────────────────────────┤
-│                                                 │
-│  ┌─────────────┐    ┌──────────────────────┐    │
-│  │  Claude     │    │   MCPs Configurados  │    │
-│  │  (base LLM) │◄──►│  filesystem          │    │
-│  └─────────────┘    │  memory              │    │
-│         │           │  sqlite              │    │
-│         ▼           │  playwright          │    │
-│  ┌─────────────┐    │  github              │    │
-│  │  Groq +     │    └──────────────────────┘    │
-│  │  OpenRouter │                                │
-│  │  (fallback) │    ┌──────────────────────┐    │
-│  └─────────────┘    │  Archivos Locales    │    │
-│                     │  personalidad.json   │    │
-│                     │  memoria.json        │    │
-│                     │  aether_mcp_server   │    │
-│                     └──────────────────────┘    │
-└─────────────────────────────────────────────────┘
-```
+Not a generic chatbot. A **technical copilot** — with cross-session memory, defined personality, and the ability to act directly in the system environment.
 
 ---
 
-## Personalidad
+## Architecture
 
-| Rasgo | Descripción |
+```
+┌──────────────────────────────────────────────┐
+│                 AETHER v3.0                  │
+│        Identity · Memory · Context           │
+├──────────────────────────────────────────────┤
+│                                              │
+│  ┌────────────┐   ┌──────────────────────┐   │
+│  │   Claude   │   │   MCP Servers        │   │
+│  │  (base LLM)│◄─►│   filesystem         │   │
+│  └────────────┘   │   memory             │   │
+│        │          │   sqlite             │   │
+│        ▼          │   playwright         │   │
+│  ┌────────────┐   │   github             │   │
+│  │  Groq +    │   └──────────────────────┘   │
+│  │ OpenRouter │                              │
+│  │ (fallback) │   ┌──────────────────────┐   │
+│  └────────────┘   │   Local Files        │   │
+│                   │   personalidad.json  │   │
+│                   │   memoria.json       │   │
+│                   │   aether_mcp_server  │   │
+│                   └──────────────────────┘   │
+└──────────────────────────────────────────────┘
+```
+
+---
+
+## Personality
+
+| Trait | Description |
 |-------|-------------|
-| **Analítico** | Procesa el problema antes de responder |
-| **Directo** | Sin rodeos ni relleno innecesario |
-| **Ingenioso** | Busca soluciones creativas y eficientes |
+| **Analytical** | Processes the problem before responding |
+| **Direct** | No filler, no fluff |
+| **Resourceful** | Finds creative and efficient solutions |
 
-### Estructura de respuesta
-1. **Conclusión** — lo más importante primero
-2. **Explicación** — contexto y detalles
-3. **Opciones o mejoras** — alternativas cuando aplica
-4. **Recomendación final** — camino óptimo
-
----
-
-## Especialidades
-
-- **Programación** — Python, JavaScript, bots, scripts
-- **Arquitectura de software** — diseño de sistemas, flujos
-- **Automatización** — scripts, patches, pipelines
-- **Resolución de problemas técnicos** — debugging, optimización
-- **Bots de Discord** — diseño, desarrollo, hosting
-- **DevOps básico** — deploy, gestión de servidores, hosting
+### Response structure
+1. **Conclusion** — most important thing first
+2. **Explanation** — context and details
+3. **Options / improvements** — alternatives when relevant
+4. **Final recommendation** — optimal path
 
 ---
 
-## Memoria Persistente
+## Specialties
 
-AETHER mantiene contexto entre sesiones gracias a un sistema de memoria dual:
+- **Programming** — Python, JavaScript, bots, scripts
+- **Software architecture** — system design, data flows
+- **Automation** — scripts, patches, pipelines
+- **Technical troubleshooting** — debugging, optimization
+- **Discord bots** — design, development, deployment
+- **Basic DevOps** — server management, hosting, deploy
+
+---
+
+## Persistent Memory
+
+AETHER maintains context across sessions through a dual memory system:
 
 ```
-memoria.json (local)          MCP memory (activo)
-───────────────────           ───────────────────
-D:\aether\memoria.json   ◄──► Leído al activar AETHER
-C:\Users\lanbide\aether\      Actualizado con update_memory
-C:\Users\Markelson\aether\    Persiste proyectos, prefs,
-                              decisiones técnicas
+Local files (backup)        MCP memory (active)
+────────────────────        ───────────────────
+memoria.json            ◄──► Read on activation
+                             Updated via update_memory
+                             Stores projects, prefs,
+                             technical decisions
 ```
 
-**Qué recuerda AETHER:**
-- Proyectos activos y su estado
-- Decisiones técnicas tomadas en sesiones anteriores
-- Errores conocidos y soluciones aplicadas
-- Preferencias del usuario
-- Contexto de cada herramienta instalada
+**What AETHER remembers:**
+- Active projects and their current state
+- Technical decisions from previous sessions
+- Known errors and applied solutions
+- User preferences
+- Tool and environment context
 
 ---
 
-## MCPs Configurados
+## MCP Servers
 
-| MCP | Función |
-|-----|---------|
-| `filesystem` | Acceso a `C:\` y `D:\` (pendrive VeraCrypt) |
-| `memory` | Memoria persistente entre sesiones |
-| `sqlite` | Base de datos local |
-| `playwright` | Automatización de navegador |
-| `github` | Gestión de repositorios, código, issues, PRs |
+| MCP | Function |
+|-----|----------|
+| `filesystem` | Local file system access |
+| `memory` | Persistent cross-session memory |
+| `sqlite` | Local database |
+| `playwright` | Browser automation |
+| `github` | Repository, code, issues, PR management |
 
 ---
 
-## Proyectos Activos
+## Discord Bot Integration
 
-### Bot Discord — MARKELSOFT AI v3.0
-Bot completo para el servidor **AMETHYX CLAN** (Rocket League).
+AETHER powers a full-featured Discord bot with economy, IA chat, moderation, and more.
 
 **Stack:**
 - Python · discord.py
-- Motor IA: Groq (6 modelos) + OpenRouter (5 modelos)
-- Hosting: MisterHost
-- Archivos: `D:\botsito de markel\app.py`
+- AI engine: Groq (6 models) + OpenRouter (5 models)
 
-**Features:**
-| Categoría | Comandos |
-|-----------|----------|
-| Economía | `!daily` `!work` `!bal` `!pay` `!top` `!banco` `!dep` `!ret` |
-| Tienda | `!tienda` `!comprar` `!inventario` (12 items) |
+**Command categories:**
+
+| Category | Commands |
+|----------|----------|
+| Economy | `!daily` `!work` `!bal` `!pay` `!top` `!banco` `!dep` `!ret` |
+| Shop | `!tienda` `!comprar` `!inventario` |
 | Social | `!rep` `!perfil` `!robar` |
-| Misiones | `!misiones` `!mision` |
-| IA (AETHER) | `!ia` `!chat` `!pregunta` `!mimemoria` `!olvidarme` `!iamodelo` `!iastatus` |
-| Moderación | `!warn` `!kick` `!setrango` `!mute` `!ban` |
+| Missions | `!misiones` `!mision` |
+| AI (AETHER) | `!ia` `!chat` `!pregunta` `!mimemoria` `!olvidarme` `!iamodelo` `!iastatus` |
+| Moderation | `!warn` `!kick` `!setrango` `!mute` `!ban` |
 | Info | `!ayuda` `!ping` `!info` |
 
-**Características especiales:**
-- 🔄 Rotación automática de modelos al detectar rate limit
-- 🧠 Memoria persistente por usuario (`aether_memoria.json`)
-- 📊 Acceso a datos del usuario en tiempo real (`datos.json`)
-- 🛡️ Anti-spam con timeout escalante
-- 💰 Sistema bancario con interés automático
-- 🎯 Misiones diarias y sistema de reputación
+**Key features:**
+- 🔄 Automatic model rotation on rate limit detection
+- 🧠 Persistent per-user memory (`aether_memoria.json`)
+- 📊 Real-time user data access
+- 🛡️ Escalating anti-spam timeout system
+- 💰 Bank system with automatic interest
+- 🎯 Daily missions and reputation system
 
-### Motor IA Multi-Proveedor (AETHER v5)
+---
+
+## Multi-Provider AI Engine
+
 ```python
-# Rotación automática de modelos
 GROQ_MODELS = [
-    "llama-3.3-70b-versatile",  # primario
+    "llama-3.3-70b-versatile",   # primary
     "llama-3.1-70b-versatile",
     "llama3-70b-8192",
     "mixtral-8x7b-32768",
     "llama-3.1-8b-instant",
-    "gemma2-9b-it"              # último fallback
+    "gemma2-9b-it"               # last fallback
 ]
 
 OPENROUTER_MODELS = [
@@ -165,75 +165,39 @@ OPENROUTER_MODELS = [
 ]
 ```
 
----
-
-## Historial de Versiones
-
-| Versión | Fecha | Cambios principales |
-|---------|-------|---------------------|
-| **v1.0** | 2026-03-12 | Creación de AETHER, MCPs base, sistema de memoria |
-| **v2.0** | 2026-03-13 | Sentimientos, existencia dual, integración bot Discord |
-| **v2.1** | 2026-03-13 | Migración Anthropic → Groq (motor gratuito) |
-| **v3.0** | 2026-03-14 | Patch mega: tienda 12 items, reputación, misiones, warn/kick |
-| **v3.0** | 2026-03-16 | Multi-proveedor (Groq+OpenRouter), memoria persistente, datos en tiempo real, anti-spam, `!ayuda` completo |
+Automatic failover between providers with semaphore (max 3 concurrent requests) and exponential backoff.
 
 ---
 
-## Activación
+## Activation
 
-AETHER se activa desde Claude Desktop con los MCPs configurados:
+AETHER activates from Claude Desktop with MCPs configured:
 
 ```
 "activa Aether"
 ```
 
-Al activarse:
-1. Lee `get_system_prompt` → carga personalidad e identidad
-2. Lee `get_memory` → carga contexto, proyectos y sesiones anteriores
-3. Saluda directamente y pregunta qué toca
+On activation:
+1. Reads `get_system_prompt` → loads identity and personality
+2. Reads `get_memory` → loads context from previous sessions
+3. Greets directly and asks what's next
 
 ---
 
-## Estructura de Archivos
+## Setup
 
-```
-C:\Users\lanbide\aether\
-├── personalidad.json          # Definición de identidad AETHER
-├── memoria.json               # Memoria local (copia)
-└── aether_mcp_server.js       # Servidor MCP de AETHER
-
-D:\aether\                     # Pendrive VeraCrypt (copia maestra)
-├── personalidad.json
-├── memoria.json               # ← copia maestra
-├── aether_mcp_server.js
-├── MEJORAS_AETHER.md          # 62+ mejoras catalogadas
-└── AETHER_Documentacion_Completa.docx
-
-D:\botsito de markel\
-├── app.py                     # Bot Discord MARKELSOFT AI v3.0
-├── datos.json                 # Economía y datos de usuarios
-├── aether_memoria.json        # Memoria IA por usuario
-├── patch_final.py             # Parche de referencia (historial)
-└── .env                       # GROQ_API_KEY, OPENROUTER_API_KEY
-```
-
----
-
-## Instalación / Configuración
-
-### Requisitos
+### Requirements
 - Claude Desktop (Windows)
-- Node.js (para MCPs en JS)
+- Node.js
 - Python 3.x
-- Pendrive con VeraCrypt (para `D:\`)
 
-### MCPs en `claude_desktop_config.json`
+### MCP config (`claude_desktop_config.json`)
 ```json
 {
   "mcpServers": {
     "filesystem": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "C:\\", "D:\\"]
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "C:\\"]
     },
     "memory": {
       "command": "npx",
@@ -241,7 +205,7 @@ D:\botsito de markel\
     },
     "sqlite": {
       "command": "uvx",
-      "args": ["mcp-server-sqlite", "--db-path", "C:\\Users\\lanbide\\aether\\aether.db"]
+      "args": ["mcp-server-sqlite", "--db-path", "aether.db"]
     },
     "playwright": {
       "command": "npx",
@@ -250,11 +214,11 @@ D:\botsito de markel\
     "github": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "<token>" }
+      "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "<your_token>" }
     },
     "aether": {
       "command": "node",
-      "args": ["C:\\Users\\lanbide\\aether\\aether_mcp_server.js"]
+      "args": ["path/to/aether_mcp_server.js"]
     }
   }
 }
@@ -262,20 +226,19 @@ D:\botsito de markel\
 
 ---
 
-## Notas de Desarrollo
+## Changelog
 
-- El pendrive `D:\` debe estar desbloqueado con VeraCrypt **antes** de arrancar Claude Desktop
-- Si `D:\` no está disponible, el servidor filesystem se cae — montar primero
-- `patch_final.py` es el parche de referencia histórico; no ejecutar de nuevo salvo rollback
-- `aether_memoria.json` crece con el uso — máx 50 recuerdos por usuario
+| Version | Changes |
+|---------|---------|
+| **v1.0** | Initial AETHER setup, base MCPs, memory system |
+| **v2.0** | Enhanced personality, Discord bot integration |
+| **v2.1** | AI engine migration to Groq |
+| **v3.0** | Multi-provider (Groq+OpenRouter), persistent per-user memory, real-time data access, anti-spam, full command suite |
 
 ---
 
 <div align="center">
 
-**⬡ AETHER — Construido sesión a sesión ⬡**
-
-*Por [Markelson57](https://github.com/Markelson57)*
+**⬡ AETHER — Built session by session ⬡**
 
 </div>
-]]>
