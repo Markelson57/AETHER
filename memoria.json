@@ -1,0 +1,21 @@
+{
+  "sistema": "AETHER",
+  "version": "3.0",
+  "ultima_actualizacion": null,
+  "usuario": {
+    "nombre": null,
+    "preferencias": {
+      "idioma": null,
+      "estilo_respuesta": null,
+      "formato_preferido": null
+    },
+    "contexto_conocido": []
+  },
+  "sesiones": [],
+  "conocimiento_acumulado": {
+    "proyectos": [],
+    "soluciones_aplicadas": [],
+    "preferencias_tecnicas": [],
+    "errores_conocidos": []
+  }
+}
