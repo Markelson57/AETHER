@@ -1,4 +1,3 @@
-
 <div align="center">
 
 ```
@@ -12,6 +11,8 @@ Advanced Enhanced Technical Helper
 [![Motor](https://img.shields.io/badge/LLM-Claude%20%2B%20Groq%20%2B%20OpenRouter-6366f1?style=flat-square)](https://github.com/Markelson57/AETHER)
 [![MCPs](https://img.shields.io/badge/MCPs-5-a855f7?style=flat-square)](https://github.com/Markelson57/AETHER)
 [![Status](https://img.shields.io/badge/status-operational-22c55e?style=flat-square)](https://github.com/Markelson57/AETHER)
+
+🌐 **Language / Idioma / Langue:** [English](README.md) · [Español](README.es.md) · [Français](README.fr.md)
 
 </div>
 
@@ -116,7 +117,7 @@ memoria.json            ◄──► Read on activation
 
 ## Discord Bot Integration
 
-AETHER powers a full-featured Discord bot with economy, IA chat, moderation, and more.
+AETHER powers a full-featured Discord bot with economy, AI chat, moderation, and more.
 
 **Stack:**
 - Python · discord.py
@@ -136,7 +137,7 @@ AETHER powers a full-featured Discord bot with economy, IA chat, moderation, and
 
 **Key features:**
 - 🔄 Automatic model rotation on rate limit detection
-- 🧠 Persistent per-user memory (`aether_memoria.json`)
+- 🧠 Persistent per-user memory
 - 📊 Real-time user data access
 - 🛡️ Escalating anti-spam timeout system
 - 💰 Bank system with automatic interest
